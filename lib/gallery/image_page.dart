@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:widget_zoom/widget_zoom.dart';
 
 class ImagePage extends StatelessWidget {
   final String image;
@@ -14,8 +15,9 @@ class ImagePage extends StatelessWidget {
             aspectRatio: 1,
             child: Container(
               width: double.infinity,
-              child: Image(
-                image: NetworkImage(image),
+              child: WidgetZoom(
+                heroAnimationTag: 'tag',
+                zoomWidget: Image.network(image)
               ),
             ),
           ),
